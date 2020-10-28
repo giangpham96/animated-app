@@ -7,7 +7,3 @@ plugins {
 repositories {
     jcenter()
 }
-
-dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.21")
-}
