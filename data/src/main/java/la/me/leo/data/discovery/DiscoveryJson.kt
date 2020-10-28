@@ -135,7 +135,8 @@ internal class VenueJson(
     @SerialName("product_line")
     val productLine: String,
     @SerialName("short_description")
-    val shortDescription: String? = null
+    val shortDescription: String? = null,
+    val tags: List<String>? = null
 )
 
 @Serializable

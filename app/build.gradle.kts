@@ -26,6 +26,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":data"))
     implementation(Dependencies.kotlinStdLib)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
