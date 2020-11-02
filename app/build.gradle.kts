@@ -19,6 +19,11 @@ android {
         viewBinding = true
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -27,10 +32,12 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":data"))
+    implementation(project(":app_resource"))
     implementation(Dependencies.kotlinStdLib)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
     implementation(Dependencies.constraintLayout)
+    implementation(Dependencies.glide)
     implementation(Dependencies.materialDesign)
     implementation(Dependencies.fragmentKtx)
     implementation(Dependencies.transition)

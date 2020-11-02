@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/u20"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/u0.5"
+    android:layout_marginEnd="@dimen/u0.5"
+    android:background="@color/light_100p"
+    android:elevation="6dp"
+    android:paddingBottom="@dimen/u1">
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="@dimen/u20"
+        android:layout_height="@dimen/u13"
+        android:background="@drawable/bg_photo_placeholder"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tvOverlay"
+        style="@style/Text_Body3_StrongEmphasis_Salt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/pepper_54"
+        android:gravity="center"
+        android:paddingStart="@dimen/u0.5"
+        android:paddingEnd="@dimen/u0.5"
+        android:text="@string/info_closed"
+        app:layout_constraintBottom_toBottomOf="@+id/ivImage"
+        app:layout_constraintEnd_toEndOf="@+id/ivImage"
+        app:layout_constraintStart_toStartOf="@+id/ivImage"
+        app:layout_constraintTop_toTopOf="@+id/ivImage" />
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/Text_Body3_StrongEmphasis_Pepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u1.5"
+        android:layout_marginTop="@dimen/u1"
+        android:layout_marginEnd="@dimen/u1.5"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage" />
+
+    <TextView
+        android:id="@+id/tvTags"
+        style="@style/Text_Small_Pepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u1.5"
+        android:layout_marginEnd="@dimen/u1.5"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/u0.75"
+        android:background="@drawable/dark_6_dashed_line"
+        android:layerType="software"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTags" />
+
+    <TextView
+        android:id="@+id/tvDetails"
+        style="@style/Text_Small_PepperSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u1.5"
+        android:layout_marginTop="@dimen/u0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vDivider" />
+
+    <TextView
+        android:id="@+id/tvRatingDivider"
+        style="@style/Text_Small_PepperSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  ·  "
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetails"
+        app:layout_constraintStart_toEndOf="@id/tvDetails"
+        app:layout_constraintTop_toTopOf="@+id/tvDetails" />
+
+    <la.me.leo.core.base.view.XsRatingIconWidget
+        android:id="@+id/ivRatingIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetails"
+        app:layout_constraintStart_toEndOf="@+id/tvRatingDivider"
+        app:layout_constraintTop_toTopOf="@+id/tvDetails" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        style="@style/Text_Small_PepperSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u0.5"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetails"
+        app:layout_constraintStart_toEndOf="@id/ivRatingIcon"
+        app:layout_constraintTop_toTopOf="@+id/tvDetails" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

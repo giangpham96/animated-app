@@ -23,6 +23,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":app_resource"))
     implementation(Dependencies.kotlinStdLib)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
