@@ -30,4 +30,5 @@ dependencies {
     implementation(Dependencies.materialDesign)
     implementation(Dependencies.fragmentKtx)
     implementation(Dependencies.transition)
+    implementation(Dependencies.exoplayer)
 }
