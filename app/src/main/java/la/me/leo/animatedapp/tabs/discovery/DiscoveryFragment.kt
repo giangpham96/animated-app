@@ -1,4 +1,4 @@
-package la.me.leo.animatedapp.tabs
+package la.me.leo.animatedapp.tabs.discovery
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

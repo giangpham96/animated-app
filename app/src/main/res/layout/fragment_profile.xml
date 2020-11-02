@@ -9,6 +9,6 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/profile"
-        tools:context=".tabs.DiscoveryFragment"
+        tools:context=".tabs.discovery.DiscoveryFragment"
         tools:ignore="ContentDescription" />
 </FrameLayout>

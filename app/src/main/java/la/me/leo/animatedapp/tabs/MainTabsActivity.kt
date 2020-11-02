@@ -7,6 +7,8 @@ import la.me.leo.animatedapp.*
 import la.me.leo.animatedapp.tabs.transition.MainTabsPopTransition
 import la.me.leo.animatedapp.tabs.transition.MainTabsPushTransition
 import la.me.leo.animatedapp.databinding.ActivityMainTabsBinding
+import la.me.leo.animatedapp.tabs.discovery.DiscoveryFragment
+import la.me.leo.animatedapp.tabs.profile.ProfileFragment
 import la.me.leo.core.base.ui.navigateToTab
 
 internal class MainTabsActivity : AppCompatActivity() {
