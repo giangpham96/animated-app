@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Animated App</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="discovery">Discovery</string>
     <string name="profile">Profile</string>
+    <string name="time_minute_short_plural">min</string>
+    <string name="info_closed">Closed</string>
 </resources>

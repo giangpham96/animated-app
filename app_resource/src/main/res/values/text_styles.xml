@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text_Small_PepperSecondary">
+        <item name="android:textSize">@dimen/text1</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/pepper_64</item>
+        <item name="android:lineHeight">@dimen/text3</item>
+        <item name="android:lineSpacingExtra">@dimen/lse2</item>
+    </style>
+
+    <style name="Text_Small_StrongEmphasis_Pepper">
+        <item name="android:textSize">@dimen/text1</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/pepper_100</item>
+        <item name="android:lineHeight">@dimen/text3</item>
+        <item name="android:lineSpacingExtra">@dimen/lse2</item>
+    </style>
+
+    <style name="Text_Heading6_Pepper">
+        <item name="android:textSize">@dimen/text5</item>
+        <item name="android:letterSpacing">0.006</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/pepper_100</item>
+        <item name="android:lineHeight">@dimen/text7</item>
+        <item name="android:lineSpacingExtra">@dimen/lse2</item>
+    </style>
+
+    <style name="Text_Body3_StrongEmphasis_Salt">
+        <item name="android:textSize">@dimen/text2</item>
+        <item name="android:letterSpacing">0.009</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/salt_100</item>
+        <item name="android:lineHeight">@dimen/text5</item>
+        <item name="android:lineSpacingExtra">@dimen/lse3</item>
+    </style>
+
+    <style name="Text_Body3_StrongEmphasis_Pepper">
+        <item name="android:textSize">@dimen/text2</item>
+        <item name="android:letterSpacing">0.009</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/pepper_100</item>
+        <item name="android:lineHeight">@dimen/text5</item>
+        <item name="android:lineSpacingExtra">@dimen/lse3</item>
+    </style>
+
+    <style name="Text_Small_Pepper">
+        <item name="android:textSize">@dimen/text1</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/pepper_100</item>
+        <item name="android:lineHeight">@dimen/text3</item>
+        <item name="android:lineSpacingExtra">@dimen/lse2</item>
+    </style>
+</resources>
