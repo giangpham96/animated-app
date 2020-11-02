@@ -13,7 +13,7 @@ object DiscoveryRepository {
             json.sections.map(::convertJsonSectionToDomainSection)
         )
     }
-    private fun convertJsonSectionToDomainSection(json: SectionJson) : Section {
+    private fun convertJsonSectionToDomainSection(json: SectionJson) : Section<*> {
         val header = json.title.let{ if (it.isNotBlank()) it else null }
         return Section(header, json.items.map(::convertJsonItemToDomainItem))
     }

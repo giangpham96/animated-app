@@ -7,17 +7,13 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonContentPolymorphicSerializer
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
-import java.io.File
-import java.nio.file.Paths
-import la.me.leo.data.readFile
 
 internal fun getDiscoveryJsonModel() : DiscoveryJson {
-    val string = readFile("/data/src/main/java/la/me/leo/data/discovery/discovery.json")
     val format = Json {
         classDiscriminator = "template"
         ignoreUnknownKeys = true
     }
-    return format.decodeFromString(DiscoveryJson.serializer(), string)
+    return format.decodeFromString(DiscoveryJson.serializer(), DISCOVERY_DATA)
 }
 
 @Serializable

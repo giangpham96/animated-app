@@ -1,8 +1,12 @@
 package la.me.leo.data.discovery
 
-data class Discovery(val city: String, val sections: List<Section>)
+import java.util.UUID
 
-data class Section(val header: String?, val items: List<Item>)
+data class Discovery(val city: String, val sections: List<Section<*>>)
+
+data class Section<T: Item>(val header: String?, val items: List<T>) {
+    val id = UUID.randomUUID().toString()
+}
 
 sealed class Item {
 
