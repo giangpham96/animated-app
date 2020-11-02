@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="PageIndicatorWidget">
+        <attr name="activeColor" format="color"/>
+        <attr name="nonActiveColor" format="color"/>
+        <attr name="circleSize" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="TranslucentIconImageView" tools:ignore="ResourceName">
+        <attr name="iconAlpha" format="float" />
+    </declare-styleable>
+
+</resources>
