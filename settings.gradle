@@ -1,5 +1,0 @@
-include ':app_resource'
-include ':data'
-include ':core'
-include ':app'
-rootProject.name = "Animated App"

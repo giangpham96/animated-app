@@ -3,13 +3,9 @@ package la.me.leo.animatedapp.tabs.transition
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.animation.addListener
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.transition.TransitionValues
 import la.me.leo.core.base.transition.FragmentTransition
-import java.lang.ref.WeakReference
 
 internal class MainTabsPopTransition : FragmentTransition(isEnterTransition = false) {
 

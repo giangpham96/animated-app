@@ -1,8 +1,8 @@
 package la.me.leo.animatedapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import la.me.leo.animatedapp.databinding.ActivityMainBinding
 import la.me.leo.animatedapp.tabs.MainTabsActivity
 

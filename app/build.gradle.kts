@@ -33,6 +33,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":data"))
     implementation(project(":app_resource"))
+    implementation(project(":core-animation"))
     implementation(Dependencies.kotlinStdLib)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
