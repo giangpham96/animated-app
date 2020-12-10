@@ -1,30 +1,24 @@
 package la.me.leo.animatedapp.tabs.transition
 
 import android.animation.Animator
-import android.animation.ValueAnimator
 import android.view.View
-import androidx.core.animation.addListener
 import androidx.core.view.isVisible
-import la.me.leo.core.base.transition.FragmentTransition
+import la.me.leo.core_animation.animator.constructLifecycleAwareAnimator
+import la.me.leo.core_animation.transition.FragmentTransition.FragmentExitTransition
 
-internal class MainTabsPopTransition : FragmentTransition(isEnterTransition = false) {
+internal class MainTabsPopTransition : FragmentExitTransition() {
 
-    override fun createFragmentAnimator(
-        fragmentRoot: View
-    ): Animator {
-        val animator = ValueAnimator.ofFloat(0f, 1f)
-        animator.addUpdateListener {
-            val animatedValue = it.animatedValue as Float
-            fragmentRoot.alpha = 1f - animatedValue
-        }
-        animator.addListener(
+    override fun createFragmentAnimator(fragmentRoot: View): Animator {
+        val animator = constructLifecycleAwareAnimator(
+            duration = 300,
+            onUpdate = { fragmentRoot.alpha = 1f - it },
             onStart = { fragmentRoot.isVisible = true },
             onEnd = {
                 fragmentRoot.isVisible = false
                 fragmentRoot.alpha = 1f
-            }
+            },
+            lifecycle = fragment.lifecycle
         )
-        animator.duration = 300L
         return animator
     }
 }

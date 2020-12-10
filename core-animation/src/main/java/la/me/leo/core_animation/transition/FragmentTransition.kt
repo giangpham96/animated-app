@@ -1,4 +1,4 @@
-package la.me.leo.core.base.transition
+package la.me.leo.core_animation.transition
 
 import android.animation.Animator
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.transition.TransitionValues
 import androidx.transition.Visibility
 
-abstract class FragmentTransition(private val isEnterTransition: Boolean) : Visibility() {
+sealed class FragmentTransition() : Visibility() {
 
     lateinit var fragment: Fragment
 
@@ -35,6 +35,21 @@ abstract class FragmentTransition(private val isEnterTransition: Boolean) : Visi
         return animator
     }
 
+    fun integrateWithFragment(fragment: Fragment) {
+        this.fragment = fragment
+        if (isEnterTransition) {
+            fragment.enterTransition = this
+        } else {
+            fragment.exitTransition = this
+        }
+    }
+
+    private val isEnterTransition: Boolean
+        get() = this is FragmentEnterTransition
+
     abstract fun createFragmentAnimator(fragmentRoot: View): Animator
+
+    abstract class FragmentEnterTransition : FragmentTransition()
+    abstract class FragmentExitTransition : FragmentTransition()
 
 }

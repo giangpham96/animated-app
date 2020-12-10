@@ -32,7 +32,7 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":data"))
-    implementation(project(":app_resource"))
+    implementation(project(":app-resource"))
     implementation(project(":core-animation"))
     implementation(Dependencies.kotlinStdLib)
     implementation(Dependencies.coreKtx)

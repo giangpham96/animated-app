@@ -1,2 +1,2 @@
-include(":app", ":app_resource",":core", ":core-animation", ":data")
+include(":app", ":app-resource",":core", ":core-animation", ":data")
 rootProject.name = "Animated App"

@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdkVersion(30)
-    
+
     defaultConfig {
         minSdkVersion(23)
         targetSdkVersion(30)
@@ -21,13 +21,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":app-resource"))
     implementation(Dependencies.kotlinStdLib)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
-    implementation(Dependencies.constraintLayout)
-    implementation(Dependencies.materialDesign)
     implementation(Dependencies.fragmentKtx)
     implementation(Dependencies.transition)
-    implementation(Dependencies.exoplayer)
 }
