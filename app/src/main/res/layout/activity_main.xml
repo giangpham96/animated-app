@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="@dimen/u2"
-    tools:context=".MainActivity">
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTabsTransition"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="Tabs transition"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        tools:ignore="HardcodedText" />
-
-</LinearLayout>
+    tools:context=".MainActivity" />
