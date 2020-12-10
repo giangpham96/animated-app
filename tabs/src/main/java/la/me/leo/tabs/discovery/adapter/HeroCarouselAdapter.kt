@@ -1,10 +1,10 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter
+package la.me.leo.tabs.discovery.adapter
 
 import android.view.ViewGroup
 import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.RecyclerView
-import la.me.leo.animatedapp.tabs.discovery.adapter.view_holder.HeroViewHolder
 import la.me.leo.data.discovery.Item.Hero
+import la.me.leo.tabs.discovery.adapter.view_holder.HeroViewHolder
 
 internal class HeroCarouselAdapter(
     private val lifecycle: Lifecycle

@@ -1,4 +1,4 @@
-package la.me.leo.animatedapp.tabs.transition
+package la.me.leo.tabs.transition
 
 import android.animation.Animator
 import android.view.View

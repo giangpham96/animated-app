@@ -37,7 +37,7 @@ object DiscoveryRepository {
                 val overlayText = json.overlay?.let{ if (it.isNotBlank()) it else null }
                 val srcVenue = json.venue
                 val priceRange = formatPriceRange(srcVenue.priceRange, srcVenue.currency)
-                val estimate = json.venue.estimate?.takeIf { overlayText == null }?.toString()
+                val estimate = json.venue.estimate.takeIf { overlayText == null }?.toString()
                 val details = if (estimate != null) {
                     "$priceRange  ·  $estimate min"
                 } else {

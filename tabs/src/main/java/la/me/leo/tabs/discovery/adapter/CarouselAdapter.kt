@@ -1,15 +1,15 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter
+package la.me.leo.tabs.discovery.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import la.me.leo.animatedapp.tabs.discovery.adapter.view_holder.MediumViewHolder
-import la.me.leo.animatedapp.tabs.discovery.adapter.view_holder.SquareTitleBottomViewHolder
-import la.me.leo.animatedapp.tabs.discovery.adapter.view_holder.VenueViewHolder
 import la.me.leo.core.base.ui.BaseViewHolder
 import la.me.leo.data.discovery.Item
 import la.me.leo.data.discovery.Item.Medium
 import la.me.leo.data.discovery.Item.Venue
 import la.me.leo.data.discovery.Item.SquareTitleBottom
+import la.me.leo.tabs.discovery.adapter.view_holder.MediumViewHolder
+import la.me.leo.tabs.discovery.adapter.view_holder.SquareTitleBottomViewHolder
+import la.me.leo.tabs.discovery.adapter.view_holder.VenueViewHolder
 
 internal class CarouselAdapter : RecyclerView.Adapter<BaseViewHolder<*, *>>() {
 

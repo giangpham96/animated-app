@@ -1,15 +1,15 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter.view_holder
+package la.me.leo.tabs.discovery.adapter.view_holder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import la.me.leo.animatedapp.databinding.ItemCarouselBinding
-import la.me.leo.animatedapp.tabs.discovery.adapter.CarouselAdapter
-import la.me.leo.animatedapp.tabs.discovery.adapter.helper.CarouselSnapHelper
 import la.me.leo.core.base.ui.BaseViewHolder
 import la.me.leo.core.base.utils.showTextOrSetGone
 import la.me.leo.data.discovery.Section
+import la.me.leo.tabs.databinding.ItemCarouselBinding
+import la.me.leo.tabs.discovery.adapter.CarouselAdapter
+import la.me.leo.tabs.discovery.adapter.helper.CarouselSnapHelper
 
 internal class CarouselViewHolder(
     parent: ViewGroup

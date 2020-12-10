@@ -1,12 +1,12 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter.helper
+package la.me.leo.tabs.discovery.adapter.helper
 
 import android.content.Context
 import android.view.View
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import la.me.leo.animatedapp.R
 import la.me.leo.core.base.utils.endMargin
 import la.me.leo.core.base.utils.startMargin
+import la.me.leo.tabs.R
 import kotlin.math.abs
 
 internal class CarouselSnapHelper(context: Context) : LinearSnapHelper() {

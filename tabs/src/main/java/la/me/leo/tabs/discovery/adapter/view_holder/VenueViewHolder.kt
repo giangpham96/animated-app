@@ -1,4 +1,4 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter.view_holder
+package la.me.leo.tabs.discovery.adapter.view_holder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,13 +7,13 @@ import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
-import la.me.leo.animatedapp.databinding.ItemVenueBinding
 import la.me.leo.core.base.misc.BlurHashDecoder
 import la.me.leo.core.base.misc.RoundRectOutlineProvider
 import la.me.leo.core.base.ui.BaseViewHolder
 import la.me.leo.core.base.utils.dp
 import la.me.leo.core.base.utils.showTextOrSetGone
 import la.me.leo.data.discovery.Item.Venue
+import la.me.leo.tabs.databinding.ItemVenueBinding
 
 internal class VenueViewHolder(
     parent: ViewGroup

@@ -1,4 +1,4 @@
-package la.me.leo.animatedapp.tabs.discovery
+package la.me.leo.tabs.discovery
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
-import la.me.leo.animatedapp.databinding.FragmentDiscoveryBinding
-import la.me.leo.animatedapp.tabs.discovery.adapter.FlexyAdapter
 import la.me.leo.core.base.ui.BaseFragment
 import la.me.leo.data.discovery.DiscoveryRepository
+import la.me.leo.tabs.databinding.FragmentDiscoveryBinding
+import la.me.leo.tabs.discovery.adapter.FlexyAdapter
 
 internal class DiscoveryFragment : BaseFragment<FragmentDiscoveryBinding>() {
 

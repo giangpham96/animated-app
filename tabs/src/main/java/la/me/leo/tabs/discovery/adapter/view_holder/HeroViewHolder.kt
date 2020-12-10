@@ -1,4 +1,4 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter.view_holder
+package la.me.leo.tabs.discovery.adapter.view_holder
 
 import android.graphics.Paint
 import android.view.LayoutInflater
@@ -9,11 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
-import la.me.leo.animatedapp.R
-import la.me.leo.animatedapp.databinding.ItemHeroBinding
-import la.me.leo.animatedapp.tabs.discovery.adapter.helper.HeroParallaxDelegate
-import la.me.leo.animatedapp.tabs.discovery.adapter.helper.HeroRollingDelegate
-import la.me.leo.animatedapp.tabs.discovery.adapter.helper.HeroVideoDelegate
 import la.me.leo.core.base.misc.BlurHashDecoder
 import la.me.leo.core.base.misc.RoundRectOutlineProvider
 import la.me.leo.core.base.ui.BaseViewHolder
@@ -21,6 +16,11 @@ import la.me.leo.core.base.utils.doOnPreDraw
 import la.me.leo.core.base.utils.dp
 import la.me.leo.core.base.utils.showTextOrSetGone
 import la.me.leo.data.discovery.Item.Hero
+import la.me.leo.tabs.R
+import la.me.leo.tabs.databinding.ItemHeroBinding
+import la.me.leo.tabs.discovery.adapter.helper.HeroParallaxDelegate
+import la.me.leo.tabs.discovery.adapter.helper.HeroRollingDelegate
+import la.me.leo.tabs.discovery.adapter.helper.HeroVideoDelegate
 
 internal class HeroViewHolder(
     parent: ViewGroup,

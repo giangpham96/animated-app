@@ -1,4 +1,4 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter.view_holder
+package la.me.leo.tabs.discovery.adapter.view_holder
 
 import android.graphics.Canvas
 import android.view.LayoutInflater
@@ -8,12 +8,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import la.me.leo.animatedapp.databinding.ItemHeroCarouselBinding
-import la.me.leo.animatedapp.tabs.discovery.adapter.HeroCarouselAdapter
 import la.me.leo.core.base.ui.BaseViewHolder
 import la.me.leo.core.base.utils.startMargin
 import la.me.leo.data.discovery.Item.Hero
 import la.me.leo.data.discovery.Section
+import la.me.leo.tabs.databinding.ItemHeroCarouselBinding
+import la.me.leo.tabs.discovery.adapter.HeroCarouselAdapter
 
 internal class HeroCarouselViewHolder(
     parent: ViewGroup,

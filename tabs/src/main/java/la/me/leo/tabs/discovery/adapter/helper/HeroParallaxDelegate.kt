@@ -1,4 +1,4 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter.helper
+package la.me.leo.tabs.discovery.adapter.helper
 
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -6,7 +6,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.marginStart
 import androidx.recyclerview.widget.RecyclerView
-import la.me.leo.animatedapp.tabs.discovery.adapter.view_holder.HeroViewHolder
+import la.me.leo.tabs.discovery.adapter.view_holder.HeroViewHolder
 import kotlin.math.abs
 
 internal class HeroParallaxDelegate(

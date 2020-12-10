@@ -1,14 +1,14 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter
+package la.me.leo.tabs.discovery.adapter
 
 import android.view.ViewGroup
 import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import la.me.leo.animatedapp.tabs.discovery.adapter.view_holder.CarouselViewHolder
-import la.me.leo.animatedapp.tabs.discovery.adapter.view_holder.HeroCarouselViewHolder
 import la.me.leo.core.base.ui.BaseViewHolder
 import la.me.leo.data.discovery.Item.Hero
 import la.me.leo.data.discovery.Section
+import la.me.leo.tabs.discovery.adapter.view_holder.CarouselViewHolder
+import la.me.leo.tabs.discovery.adapter.view_holder.HeroCarouselViewHolder
 
 open class FlexyAdapter(
     private val lifecycle: Lifecycle

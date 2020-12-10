@@ -1,9 +1,9 @@
-package la.me.leo.animatedapp.tabs.profile
+package la.me.leo.tabs.profile
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import la.me.leo.animatedapp.databinding.FragmentProfileBinding
 import la.me.leo.core.base.ui.BaseFragment
+import la.me.leo.tabs.databinding.FragmentProfileBinding
 
 internal class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 

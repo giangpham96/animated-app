@@ -1,18 +1,14 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("kotlin-android")
-    id("kotlin-kapt")
 }
 
 android {
     compileSdkVersion(30)
 
     defaultConfig {
-        applicationId = "la.me.leo.animatedapp"
         minSdkVersion(23)
         targetSdkVersion(30)
-        versionCode = 1
-        versionName = "1.0"
     }
 
     buildFeatures {
@@ -31,7 +27,6 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":tabs"))
     implementation(project(":data"))
     implementation(project(":app-resource"))
     implementation(project(":core-animation"))

@@ -1,20 +1,19 @@
-package la.me.leo.animatedapp.tabs
+package la.me.leo.tabs
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import la.me.leo.animatedapp.R
-import la.me.leo.animatedapp.databinding.FragmentTabsBinding
-import la.me.leo.animatedapp.tabs.discovery.DiscoveryFragment
-import la.me.leo.animatedapp.tabs.profile.ProfileFragment
-import la.me.leo.animatedapp.tabs.transition.MainTabsPopTransition
-import la.me.leo.animatedapp.tabs.transition.MainTabsPushTransition
 import la.me.leo.core.base.ui.BaseFragment
 import la.me.leo.core_animation.fragment.navigateToTab
+import la.me.leo.tabs.databinding.FragmentTabsBinding
+import la.me.leo.tabs.discovery.DiscoveryFragment
+import la.me.leo.tabs.profile.ProfileFragment
+import la.me.leo.tabs.transition.MainTabsPopTransition
+import la.me.leo.tabs.transition.MainTabsPushTransition
 
-internal class TabsFragment : BaseFragment<FragmentTabsBinding>() {
+class TabsFragment : BaseFragment<FragmentTabsBinding>() {
 
     override fun createView(
         inflater: LayoutInflater,

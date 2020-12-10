@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import la.me.leo.animatedapp.databinding.ActivityEntryBinding
-import la.me.leo.animatedapp.tabs.TabsFragment
+import la.me.leo.tabs.TabsFragment
 
 internal class EntryActivity : AppCompatActivity() {
 

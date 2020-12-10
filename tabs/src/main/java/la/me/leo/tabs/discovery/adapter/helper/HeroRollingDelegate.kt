@@ -1,4 +1,4 @@
-package la.me.leo.animatedapp.tabs.discovery.adapter.helper
+package la.me.leo.tabs.discovery.adapter.helper
 
 import android.os.Handler
 import android.view.View
@@ -7,8 +7,8 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import la.me.leo.animatedapp.tabs.discovery.adapter.view_holder.HeroViewHolder
 import la.me.leo.core.base.view.MediaPlayerWidget
+import la.me.leo.tabs.discovery.adapter.view_holder.HeroViewHolder
 
 internal class HeroRollingDelegate(
     private val holder: HeroViewHolder,

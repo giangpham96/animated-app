@@ -1,14 +1,14 @@
-package la.me.leo.animatedapp.tabs.transition
+package la.me.leo.tabs.transition
 
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.view.View
 import android.view.ViewAnimationUtils
 import androidx.core.view.animation.PathInterpolatorCompat
-import la.me.leo.animatedapp.R
 import la.me.leo.core_animation.animator.cancelAnimatorOnDestroy
 import la.me.leo.core_animation.animator.constructAnimator
 import la.me.leo.core_animation.transition.FragmentTransition.FragmentEnterTransition
+import la.me.leo.tabs.R
 import kotlin.math.pow
 import kotlin.math.sqrt
 
