@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import la.me.leo.core.base.navigation.Navigator
 
 abstract class BaseFragment<B : ViewBinding> : Fragment() {
 
@@ -31,4 +32,7 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
         _binding = null
         super.onDestroyView()
     }
+
+    protected val navigator: Navigator
+        get() = requireActivity() as Navigator
 }

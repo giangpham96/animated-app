@@ -17,6 +17,22 @@
         <item name="android:lineSpacingExtra">@dimen/lse2</item>
     </style>
 
+    <style name="Text_Heading3_Pepper">
+        <item name="android:textSize">@dimen/text11</item>
+        <item name="android:textColor">@color/pepper_100</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineHeight">@dimen/text13</item>
+        <item name="android:lineSpacingExtra">@dimen/lse2</item>
+    </style>
+
+    <style name="Text_Body2_Pepper">
+        <item name="android:textSize">@dimen/text3</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">@color/pepper_100</item>
+        <item name="android:lineHeight">@dimen/text5</item>
+        <item name="android:lineSpacingExtra">@dimen/lse2</item>
+    </style>
+
     <style name="Text_Heading6_Pepper">
         <item name="android:textSize">@dimen/text5</item>
         <item name="android:letterSpacing">0.006</item>

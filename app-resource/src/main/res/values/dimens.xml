@@ -25,6 +25,7 @@
     <dimen name="text7">24sp</dimen>
     <dimen name="text9">28sp</dimen>
     <dimen name="text11">32sp</dimen>
+    <dimen name="text13">36sp</dimen>
 
     <dimen name="lse2">2sp</dimen>
     <dimen name="lse3">3sp</dimen>

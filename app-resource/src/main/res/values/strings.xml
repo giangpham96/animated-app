@@ -4,4 +4,7 @@
     <string name="profile">Profile</string>
     <string name="time_minute_short_plural">min</string>
     <string name="info_closed">Closed</string>
+    <string name="ob_intro_title">Welcome to Wolt</string>
+    <string name="ob_intro_description">Enjoy the best restaurants or get what you need from nearby stores, delivered 😌</string>
+    <string name="ob_intro_btn_get_started">Get started</string>
 </resources>

@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.4.10"
     const val material = "1.1.0"
     const val recyclerView = "1.1.0"
-    const val epoxy = "3.9.0"
+    const val lottie = "3.4.1"
     const val jsonSerialization = "1.0.0"
     const val exoplayer = "2.11.6"
 }
@@ -22,8 +22,7 @@ object Dependencies {
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
     const val materialDesign = "com.google.android.material:material:${Versions.material}"
     const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
-    const val epoxy = "com.airbnb.android:epoxy:${Versions.epoxy}"
-    const val epoxyProcessor = "com.airbnb.android:epoxy-processor:${Versions.epoxy}"
+    const val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
     const val transition = "androidx.transition:transition-ktx:${Versions.transition}"
     const val exoplayer = "com.google.android.exoplayer:exoplayer:${Versions.exoplayer}"
     const val jsonSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.jsonSerialization}"

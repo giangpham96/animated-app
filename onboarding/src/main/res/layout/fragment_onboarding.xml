@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/vBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/wolt_brand_blue" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/anchor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="W,3:2"
+        app:layout_constraintEnd_toEndOf="@id/anchor"
+        app:layout_constraintStart_toStartOf="@id/anchor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_loop="true" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/textAnchor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Text_Heading3_Pepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginEnd="@dimen/u2"
+        android:layout_marginBottom="@dimen/u1"
+        android:gravity="center"
+        android:text="@string/ob_intro_title"
+        app:layout_constraintBottom_toTopOf="@id/tvDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAnchor"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        style="@style/Text_Body2_Pepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginEnd="@dimen/u2"
+        android:gravity="center"
+        android:text="@string/ob_intro_description"
+        app:layout_constraintBottom_toTopOf="@id/vDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginEnd="@dimen/u2"
+        android:layout_marginBottom="@dimen/u3"
+        android:background="@color/pepper_8"
+        app:layout_constraintBottom_toTopOf="@id/tvDoneButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tvDoneButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginEnd="@dimen/u2"
+        android:layout_marginBottom="@dimen/u2"
+        android:height="60dp"
+        android:background="@color/wolt_brand_blue"
+        android:elevation="2dp"
+        android:text="@string/ob_intro_btn_get_started"
+        android:textAllCaps="false"
+        android:textColor="@color/salt_100"
+        app:cornerRadius="@dimen/u1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

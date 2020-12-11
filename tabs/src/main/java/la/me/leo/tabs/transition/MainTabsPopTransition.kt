@@ -4,7 +4,7 @@ import android.animation.Animator
 import android.view.View
 import androidx.core.view.isVisible
 import la.me.leo.core_animation.animator.constructLifecycleAwareAnimator
-import la.me.leo.core_animation.transition.FragmentTransition.FragmentExitTransition
+import la.me.leo.core_animation.transition.FragmentExitTransition
 
 internal class MainTabsPopTransition : FragmentExitTransition() {
 
@@ -12,7 +12,6 @@ internal class MainTabsPopTransition : FragmentExitTransition() {
         val animator = constructLifecycleAwareAnimator(
             duration = 300,
             onUpdate = { fragmentRoot.alpha = 1f - it },
-            onStart = { fragmentRoot.isVisible = true },
             onEnd = {
                 fragmentRoot.isVisible = false
                 fragmentRoot.alpha = 1f

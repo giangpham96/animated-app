@@ -22,6 +22,7 @@ android {
 
 dependencies {
     implementation(project(":app-resource"))
+    implementation(project(":core-animation"))
     implementation(Dependencies.kotlinStdLib)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)

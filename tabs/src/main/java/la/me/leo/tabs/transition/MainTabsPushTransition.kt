@@ -7,7 +7,7 @@ import android.view.ViewAnimationUtils
 import androidx.core.view.animation.PathInterpolatorCompat
 import la.me.leo.core_animation.animator.cancelAnimatorOnDestroy
 import la.me.leo.core_animation.animator.constructAnimator
-import la.me.leo.core_animation.transition.FragmentTransition.FragmentEnterTransition
+import la.me.leo.core_animation.transition.FragmentEnterTransition
 import la.me.leo.tabs.R
 import kotlin.math.pow
 import kotlin.math.sqrt
