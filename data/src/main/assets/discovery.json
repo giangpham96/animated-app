@@ -151,7 +151,6 @@
           "title": "Golden Feta",
           "type": "venue",
           "venue": {
-            "address": "Liesikuja 4",
             "badges": [
               {
                 "text": "New",
@@ -164,15 +163,9 @@
             "delivery_price": "€6.90",
             "estimate": 35,
             "favourite": false,
-            "franchise": "",
-            "location": [
-              24.8538125,
-              60.26259599999999
-            ],
             "name": "Golden Feta",
             "online": false,
             "price_range": 4,
-            "product_line": "restaurant",
             "short_description": "Best Greek Food, τέλεια!",
             "slug": "golden-feta",
             "tags": []
@@ -188,7 +181,6 @@
           "title": "Johanna's pizza",
           "type": "venue",
           "venue": {
-            "address": "Lönnrotinkatu 18",
             "badges": [],
             "city": "Helsinki",
             "currency": "EUR",
@@ -196,15 +188,9 @@
             "delivery_price": "€3.90",
             "estimate": 45,
             "favourite": false,
-            "franchise": "",
-            "location": [
-              24.93494153022766,
-              60.16501900502252
-            ],
             "name": "Johanna's pizza",
             "online": false,
             "price_range": 3,
-            "product_line": "restaurant",
             "rating": {
               "rating": 4,
               "score": 9.8
@@ -224,7 +210,6 @@
           "title": "Marko's place",
           "type": "venue",
           "venue": {
-            "address": "Itäkatu 5",
             "badges": [],
             "city": "Helsinki",
             "currency": "EUR",
@@ -232,15 +217,9 @@
             "delivery_price": "€24.90",
             "estimate": 45,
             "favourite": false,
-            "franchise": "",
-            "location": [
-              25.0825908,
-              60.2117269
-            ],
             "name": "Marko's place",
             "online": false,
             "price_range": 0,
-            "product_line": "restaurant",
             "slug": "markos-place",
             "tags": []
           }
@@ -355,7 +334,6 @@
           "title": "Kotipizza soo",
           "type": "venue",
           "venue": {
-            "address": "Leppävaarankatu 3-9",
             "badges": [],
             "city": "Helsinki",
             "currency": "EUR",
@@ -363,15 +341,9 @@
             "delivery_price": "€9.90",
             "estimate": 35,
             "favourite": false,
-            "franchise": "",
-            "location": [
-              24.8106914,
-              60.2180601
-            ],
             "name": "Kotipizza soo",
             "online": true,
             "price_range": 0,
-            "product_line": "restaurant",
             "slug": "kotipizza-soo",
             "tags": []
           }
@@ -385,7 +357,6 @@
           "title": "Lake Xochimilco",
           "type": "venue",
           "venue": {
-            "address": "Widok 16/2",
             "badges": [],
             "city": "Warsaw",
             "currency": "PLN",
@@ -393,11 +364,9 @@
             "delivery_price": "PLN10.99",
             "estimate": 35,
             "favourite": false,
-            "franchise": "",
             "name": "Lake Xochimilco",
             "online": true,
             "price_range": 3,
-            "product_line": "restaurant",
             "rating": {
               "rating": 4,
               "score": 10
@@ -428,7 +397,6 @@
           "title": "Golden Feta",
           "type": "venue",
           "venue": {
-            "address": "Liesikuja 4",
             "badges": [
               {
                 "text": "New",
@@ -441,15 +409,9 @@
             "delivery_price": "€6.90",
             "estimate": 35,
             "favourite": false,
-            "franchise": "",
-            "location": [
-              24.8538125,
-              60.26259599999999
-            ],
             "name": "Golden Feta",
             "online": false,
             "price_range": 4,
-            "product_line": "restaurant",
             "short_description": "Best Greek Food, τέλεια!",
             "slug": "golden-feta",
             "tags": []

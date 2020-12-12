@@ -7,4 +7,5 @@
     <string name="ob_intro_title">Welcome to Wolt</string>
     <string name="ob_intro_description">Enjoy the best restaurants or get what you need from nearby stores, delivered 😌</string>
     <string name="ob_intro_btn_get_started">Get started</string>
+    <string name="venues_list_delivery">Delivery %s</string>
 </resources>

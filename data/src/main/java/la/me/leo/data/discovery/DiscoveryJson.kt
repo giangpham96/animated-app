@@ -8,14 +8,6 @@ import kotlinx.serialization.json.JsonContentPolymorphicSerializer
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 
-internal fun getDiscoveryJsonModel() : DiscoveryJson {
-    val format = Json {
-        classDiscriminator = "template"
-        ignoreUnknownKeys = true
-    }
-    return format.decodeFromString(DiscoveryJson.serializer(), DISCOVERY_DATA)
-}
-
 @Serializable
 internal class DiscoveryJson(
     val city: String,
@@ -112,7 +104,6 @@ internal sealed class PriceJson {
 
 @Serializable
 internal class VenueJson(
-    val address: String,
     val badges: List<BadgeJson>,
     val city: String,
     val currency: String,
@@ -121,15 +112,11 @@ internal class VenueJson(
     val deliveryPrice: String,
     val estimate: Int,
     val favourite: Boolean,
-    val franchise: String,
-    val location: List<Double>? = null,
     val rating: RatingJson? = null,
     val name: String,
     val online: Boolean,
     @SerialName("price_range")
     val priceRange: Int,
-    @SerialName("product_line")
-    val productLine: String,
     @SerialName("short_description")
     val shortDescription: String? = null,
     val tags: List<String>? = null

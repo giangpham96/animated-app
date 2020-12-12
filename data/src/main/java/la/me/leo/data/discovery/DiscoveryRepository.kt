@@ -1,10 +1,22 @@
 package la.me.leo.data.discovery
 
+import android.content.Context
+import kotlinx.serialization.json.Json
 import la.me.leo.data.discovery.ItemJson.VenueItemJson
+import la.me.leo.data.readJsonFromAsset
 
-object DiscoveryRepository {
+class DiscoveryRepository(private val context: Context) {
 
     fun provideDiscoveryData() = convertJsonDiscoveryToDomainDiscovery(getDiscoveryJsonModel())
+
+    private fun getDiscoveryJsonModel() : DiscoveryJson {
+        val format = Json {
+            classDiscriminator = "template"
+            ignoreUnknownKeys = true
+        }
+        val json = context.readJsonFromAsset("discovery.json")
+        return format.decodeFromString(DiscoveryJson.serializer(), json)
+    }
 
     // Separate the below logic to a converter if necessary
     private fun convertJsonDiscoveryToDomainDiscovery(json: DiscoveryJson) : Discovery {

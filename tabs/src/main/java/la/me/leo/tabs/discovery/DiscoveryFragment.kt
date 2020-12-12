@@ -24,7 +24,7 @@ internal class DiscoveryFragment : BaseFragment<FragmentDiscoveryBinding>() {
         super.onViewCreated(view, savedInstanceState)
         binding.rvDiscovery.apply {
             adapter = FlexyAdapter(lifecycle)
-                .also { it.items = DiscoveryRepository.provideDiscoveryData().sections }
+                .also { it.items = DiscoveryRepository(requireContext()).provideDiscoveryData().sections }
             layoutManager = LinearLayoutManager(context, VERTICAL, false)
         }
     }
