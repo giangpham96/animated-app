@@ -2,13 +2,16 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/salt_100">
 
-    <ImageView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/profile"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/u1"
+        android:paddingBottom="@dimen/u1"
         tools:context=".tabs.discovery.DiscoveryFragment"
         tools:ignore="ContentDescription" />
 </FrameLayout>

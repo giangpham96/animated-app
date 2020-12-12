@@ -28,6 +28,7 @@ class DeliveryRepository(private val context: Context) {
             blurHash = src.image.blurhash,
             overlayText = src.overlay?.takeIf { it.isNotBlank() },
             name = src.venue.name,
+            badges = src.venue.badges.map { it.text },
             desc = src.venue.shortDescription,
             details = details,
             rating5 = src.venue.rating?.rating,
@@ -38,7 +39,7 @@ class DeliveryRepository(private val context: Context) {
     }
 
     private fun getDeliveryJsonModel(): DeliveryJson {
-        val format = Json {}
+        val format = Json { ignoreUnknownKeys = true }
         val json = context.readJsonFromAsset("delivery.json")
         return format.decodeFromString(DeliveryJson.serializer(), json)
     }

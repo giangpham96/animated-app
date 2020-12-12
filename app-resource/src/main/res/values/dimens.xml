@@ -5,8 +5,11 @@
     <dimen name="u0.75">6dp</dimen>
     <dimen name="u1">8dp</dimen>
     <dimen name="u1.5">12dp</dimen>
+    <dimen name="u1.75">14dp</dimen>
     <dimen name="u2">16dp</dimen>
+    <dimen name="u2.5">20dp</dimen>
     <dimen name="u3">24dp</dimen>
+    <dimen name="u3.5">28dp</dimen>
     <dimen name="u4">32dp</dimen>
     <dimen name="u5">40dp</dimen>
     <dimen name="u6">48dp</dimen>
@@ -27,6 +30,7 @@
     <dimen name="text11">32sp</dimen>
     <dimen name="text13">36sp</dimen>
 
+    <dimen name="lse1">1sp</dimen>
     <dimen name="lse2">2sp</dimen>
     <dimen name="lse3">3sp</dimen>
 </resources>

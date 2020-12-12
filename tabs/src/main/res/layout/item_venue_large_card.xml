@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/u1"
+    android:layout_marginBottom="@dimen/u1"
+    android:layout_marginStart="@dimen/u2"
+    android:layout_marginEnd="@dimen/u2"
+    android:elevation="6dp"
+    android:background="@color/light_100p">
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_photo_placeholder"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="H,2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBadge1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginTop="@dimen/u1.75"
+        android:paddingStart="@dimen/u0.75"
+        android:paddingTop="@dimen/u0.25"
+        android:paddingEnd="@dimen/u0.75"
+        android:paddingBottom="@dimen/u0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBadge2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u0.5"
+        android:layout_marginTop="@dimen/u1.75"
+        android:paddingStart="@dimen/u0.75"
+        android:paddingTop="@dimen/u0.25"
+        android:paddingEnd="@dimen/u0.75"
+        android:paddingBottom="@dimen/u0.25"
+        app:layout_constraintStart_toEndOf="@id/tvBadge1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOverlay"
+        style="@style/Text_Body2_StrongEmphasis_Salt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/pepper_54"
+        android:gravity="center"
+        android:paddingStart="@dimen/u0.5"
+        android:paddingEnd="@dimen/u0.5"
+        android:text="@string/info_closed"
+        app:layout_constraintBottom_toBottomOf="@+id/ivImage"
+        app:layout_constraintEnd_toEndOf="@+id/ivImage"
+        app:layout_constraintStart_toStartOf="@+id/ivImage"
+        app:layout_constraintTop_toTopOf="@+id/ivImage" />
+
+    <ImageView
+        android:layout_width="@dimen/u3.5"
+        android:layout_height="@dimen/u3.5"
+        android:src="@drawable/venue_favorite_shadow"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFavorite"
+        app:layout_constraintEnd_toEndOf="@+id/ivFavorite"
+        app:layout_constraintStart_toStartOf="@+id/ivFavorite"
+        app:layout_constraintTop_toTopOf="@+id/ivFavorite" />
+
+    <ImageView
+        android:id="@+id/ivFavorite"
+        android:layout_width="@dimen/u2.5"
+        android:layout_height="@dimen/u2.5"
+        android:layout_marginTop="@dimen/u1.5"
+        android:layout_marginEnd="@dimen/u1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/salt_100" />
+
+    <LinearLayout
+        android:id="@+id/llEstimateContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/u2"
+        android:background="@drawable/bg_blue_rounded_rect_estimate"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/u1"
+        android:paddingTop="@dimen/u0.5"
+        android:paddingEnd="@dimen/u1"
+        android:paddingBottom="@dimen/u0.5"
+        app:layout_constraintBottom_toBottomOf="@id/tvDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvName">
+
+        <TextView
+            android:id="@+id/tvEstimatedTime"
+            style="@style/Text_Body3_Emphasis_Wolt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/Text_Tiny_Wolt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_minute_short_plural" />
+
+        <!-- reserving space for width consistency-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="55-555"
+            android:textSize="@dimen/text2"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/Text_Title1_Pepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginTop="@dimen/u1.5"
+        android:layout_marginEnd="@dimen/u2"
+        android:singleLine="true"
+        app:layout_constraintEnd_toStartOf="@+id/llEstimateContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        style="@style/Text_Body3_Pepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginEnd="@dimen/u2"
+        android:singleLine="true"
+        app:layout_constraintEnd_toStartOf="@+id/llEstimateContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/u1.5"
+        android:background="@color/pepper_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+    <TextView
+        android:id="@+id/tvDetails"
+        style="@style/Text_Body3_PepperSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginTop="@dimen/u1"
+        android:layout_marginBottom="@dimen/u1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vDivider" />
+
+    <TextView
+        android:id="@+id/tvRatingDivider"
+        style="@style/Text_Body3_PepperSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  ·  "
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetails"
+        app:layout_constraintStart_toEndOf="@id/tvDetails"
+        app:layout_constraintTop_toTopOf="@+id/tvDetails" />
+
+    <la.me.leo.core.base.view.XsRatingIconWidget
+        android:id="@+id/ivRatingIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetails"
+        app:layout_constraintStart_toEndOf="@+id/tvRatingDivider"
+        app:layout_constraintTop_toTopOf="@+id/tvDetails" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        style="@style/Text_Body3_PepperSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u0.5"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetails"
+        app:layout_constraintStart_toEndOf="@id/ivRatingIcon"
+        app:layout_constraintTop_toTopOf="@+id/tvDetails" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

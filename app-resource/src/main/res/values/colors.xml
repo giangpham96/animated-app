@@ -9,6 +9,7 @@
     <color name="light_100p">#ffffffff</color>
 
     <color name="dark_00p">#00202125</color>
+    <color name="dark_03p">#07202125</color>
     <color name="dark_03p_on_white">#fff8f8f9</color>
     <color name="dark_12p">#1f202125</color>
     <color name="dark_38p">#61202125</color>
@@ -26,5 +27,6 @@
     <color name="id_blue_55p">#8a009de0</color>
     <color name="id_blue_100p">#ff009de0</color>
 
+    <color name="wolt_100">#ff009de0</color>
     <color name="wolt_brand_blue">#ff00c2e8</color>
 </resources>
