@@ -9,7 +9,7 @@ import la.me.leo.core.base.ui.BaseFragment
 import la.me.leo.core_animation.fragment.navigateToTab
 import la.me.leo.tabs.databinding.FragmentTabsBinding
 import la.me.leo.tabs.discovery.DiscoveryFragment
-import la.me.leo.tabs.profile.ProfileFragment
+import la.me.leo.tabs.delivery.DeliveryFragment
 import la.me.leo.tabs.transition.MainTabsPopTransition
 import la.me.leo.tabs.transition.MainTabsPushTransition
 
@@ -38,7 +38,7 @@ class TabsFragment : BaseFragment<FragmentTabsBinding>() {
                     return@f true
                 }
                 R.id.item_profile -> {
-                    showFragment(TAG_PROFILE, 1) { ProfileFragment() }
+                    showFragment(TAG_PROFILE, 1) { DeliveryFragment() }
                     return@f true
                 }
             }

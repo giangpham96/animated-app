@@ -13,7 +13,7 @@
     <dimen name="u13">78dp</dimen>
     <dimen name="u15">120dp</dimen>
     <dimen name="u17">136dp</dimen>
-    <dimen name="u20">120dp</dimen>
+    <dimen name="u20">160dp</dimen>
     <dimen name="u30">240dp</dimen>
 
     <dimen name="text0">10sp</dimen>
