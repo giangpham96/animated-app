@@ -1,7 +1,13 @@
 package la.me.leo.animatedapp
 
+import android.app.Activity
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.marginTop
 import androidx.fragment.app.commit
 import la.me.leo.animatedapp.databinding.ActivityEntryBinding
 import la.me.leo.core.base.navigation.NavigationEvent
@@ -18,6 +24,7 @@ internal class EntryActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         val binding = ActivityEntryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupWindow()
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 add(R.id.fragmentRoot, OnboardingFragment())
@@ -25,8 +32,20 @@ internal class EntryActivity : AppCompatActivity(),
         }
     }
 
+    private fun setupWindow() {
+        var flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            flags = flags or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            window.navigationBarColor = ContextCompat.getColor(this, R.color.light_100p)
+            flags = flags or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+        }
+        window.decorView.systemUiVisibility = flags
+    }
+
     override fun navigateTo(event: NavigationEvent) {
-        when(event) {
+        when (event) {
             ToTabs -> navigateToTabs()
         }
     }

@@ -55,12 +55,12 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
     }
 
     private fun prepareUiForButtonAnimation() = with(binding) {
-        val u2 = requireContext().resources.getDimensionPixelSize(R.dimen.u2)
+        val u2 = requireContext().resources.getDimensionPixelSize(R.dimen.u2).toFloat()
         tvDoneButton.isClickable = false
-        tvTitle.translationY = u2.toFloat()
-        tvDescription.translationY = u2.toFloat()
-        vDivider.translationY = u2.toFloat()
-        tvDoneButton.translationY = u2.toFloat()
+        tvTitle.translationY = u2
+        tvDescription.translationY = u2
+        vDivider.translationY = u2
+        tvDoneButton.translationY = u2
         tvTitle.alpha = 0f
         tvDescription.alpha = 0f
         vDivider.alpha = 0f

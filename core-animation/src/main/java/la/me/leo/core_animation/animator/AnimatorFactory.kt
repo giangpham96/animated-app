@@ -10,7 +10,7 @@ import androidx.lifecycle.OnLifecycleEvent
 
 fun constructLifecycleAwareAnimator(
     duration: Int, interpolator: Interpolator? = null, startDelay: Long = 0,
-    onUpdate: ((Float) -> (Unit)), onStart: (() -> (Unit))? = null, onEnd: (() -> (Unit))? = null,
+    onUpdate: (Float) -> (Unit), onStart: (() -> (Unit))? = null, onEnd: (() -> (Unit))? = null,
     lifecycle: Lifecycle
 ): ValueAnimator {
     val animator = constructAnimator(duration, interpolator, startDelay, onUpdate, onStart, onEnd)
@@ -20,7 +20,7 @@ fun constructLifecycleAwareAnimator(
 
 fun constructAnimator(
     duration: Int, interpolator: Interpolator? = null, startDelay: Long = 0,
-    onUpdate: ((Float) -> (Unit)), onStart: (() -> (Unit))? = null, onEnd: (() -> (Unit))? = null
+    onUpdate: (Float) -> (Unit), onStart: (() -> (Unit))? = null, onEnd: (() -> (Unit))? = null
 ): ValueAnimator {
     val animator = ValueAnimator.ofFloat(0f, 1f)
         .setDuration(duration.toLong())
