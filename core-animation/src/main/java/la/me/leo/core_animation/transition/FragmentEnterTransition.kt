@@ -7,11 +7,8 @@ import androidx.fragment.app.Fragment
 import androidx.transition.TransitionValues
 
 abstract class FragmentEnterTransition : FragmentTransition() {
-    override fun createAnimator(
-        sceneRoot: ViewGroup,
-        startValues: TransitionValues?,
-        endValues: TransitionValues?
-    ): Animator? {
+    override fun createAnimator(sceneRoot: ViewGroup, startValues: TransitionValues?,
+        endValues: TransitionValues?): Animator? {
         val animator = super.createAnimator(sceneRoot, startValues, endValues) ?: return null
         animator.addListener(
             onStart = { fragment.view?.bringToFront() },

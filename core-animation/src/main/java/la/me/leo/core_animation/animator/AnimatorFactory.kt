@@ -14,7 +14,7 @@ fun constructLifecycleAwareAnimator(
     lifecycle: Lifecycle
 ): ValueAnimator {
     val animator = constructAnimator(duration, interpolator, startDelay, onUpdate, onStart, onEnd)
-    cancelAnimatorOnDestroy(animator, lifecycle)
+    lifecycle.cancelAnimatorOnDestroy(animator)
     return animator
 }
 
@@ -41,11 +41,11 @@ fun constructAnimator(
     return animator
 }
 
-fun cancelAnimatorOnDestroy(animator: Animator, lifecycle: Lifecycle) {
-    lifecycle.addObserver(object : LifecycleObserver {
+fun Lifecycle.cancelAnimatorOnDestroy(animator: Animator) {
+    addObserver(object : LifecycleObserver {
         @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
         fun onDestroyed() {
-            lifecycle.removeObserver(this)
+            removeObserver(this)
             animator.cancel()
         }
     })

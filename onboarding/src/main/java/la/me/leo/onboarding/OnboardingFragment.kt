@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
+import com.airbnb.lottie.LottieDrawable.INFINITE
 import la.me.leo.core.base.navigation.ToTabs
 import la.me.leo.core.base.ui.BaseFragment
 import la.me.leo.core_animation.animator.cancelAnimatorOnDestroy
@@ -30,7 +31,7 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
         setupEventListener()
         prepareUiBeforeAnimation()
         val buttonAnimator = createBottomViewsAnimatorSet()
-        cancelAnimatorOnDestroy(buttonAnimator, lifecycle)
+        lifecycle.cancelAnimatorOnDestroy(buttonAnimator)
         setupLottieAnimation(buttonAnimator)
         binding.lottieAnimationView.playAnimation()
     }
@@ -44,6 +45,7 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
     private fun setupLottieAnimation(buttonAnimation: Animator) {
         val lottieView = binding.lottieAnimationView
         lottieView.setAnimation(R.raw.onboarding)
+        lottieView.setRepeatCount(INFINITE)
         lottieView.setMaxFrame(972)
         lottieView.addAnimatorListener(object : AnimatorListenerAdapter() {
 

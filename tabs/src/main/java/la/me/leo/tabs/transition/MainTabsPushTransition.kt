@@ -22,7 +22,7 @@ internal class MainTabsPushTransition(private val x: Int, private val y: Int) :
         animatorSet.playTogether(animator1, animator2)
         animatorSet.interpolator = PathInterpolatorCompat.create(0.25f, 0.1f, 0.25f, 1f)
         animatorSet.duration = 300L
-        cancelAnimatorOnDestroy(animatorSet, fragment.lifecycle)
+        fragment.lifecycle.cancelAnimatorOnDestroy(animatorSet)
         return animatorSet
     }
 
