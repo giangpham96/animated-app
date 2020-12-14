@@ -3,7 +3,7 @@
     <item android:id="@+id/item_discovery"
         android:title="@string/discovery"
         android:icon="@drawable/ic_discovery"/>
-    <item android:id="@+id/item_profile"
-        android:title="@string/profile"
-        android:icon="@drawable/ic_profile"/>
+    <item android:id="@+id/item_deliver"
+        android:title="@string/deliver"
+        android:icon="@drawable/ic_delivery"/>
 </menu>

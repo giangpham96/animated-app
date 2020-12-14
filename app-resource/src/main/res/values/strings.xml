@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Animated App</string>
     <string name="discovery">Discovery</string>
-    <string name="profile">Profile</string>
+    <string name="deliver">Deliver</string>
     <string name="time_minute_short_plural">min</string>
     <string name="info_closed">Closed</string>
     <string name="ob_intro_title">Welcome to Wolt</string>

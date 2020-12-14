@@ -19,7 +19,7 @@ fun constructLifecycleAwareAnimator(
 }
 
 fun constructAnimator(
-    duration: Int, interpolator: Interpolator? = null, startDelay: Long = 0,
+    duration: Int, interpolator: Interpolator? = null, delay: Long = 0,
     onUpdate: (Float) -> (Unit), onStart: (() -> (Unit))? = null, onEnd: (() -> (Unit))? = null
 ): ValueAnimator {
     val animator = ValueAnimator.ofFloat(0f, 1f)
@@ -37,7 +37,7 @@ fun constructAnimator(
             }
         })
     }
-    animator.startDelay = startDelay
+    animator.startDelay = delay
     return animator
 }
 

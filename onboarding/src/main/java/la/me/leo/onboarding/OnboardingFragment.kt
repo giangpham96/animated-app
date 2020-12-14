@@ -28,15 +28,15 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupEventListener()
-        prepareUiForButtonAnimation()
-        val buttonAnimator = createButtonAnimation()
+        prepareUiBeforeAnimation()
+        val buttonAnimator = createBottomViewsAnimatorSet()
         cancelAnimatorOnDestroy(buttonAnimator, lifecycle)
         setupLottieAnimation(buttonAnimator)
         binding.lottieAnimationView.playAnimation()
     }
 
     private fun setupEventListener() {
-        binding.tvDoneButton.setOnClickListener {
+        binding.btnDone.setOnClickListener {
             navigator.navigateTo(ToTabs)
         }
     }
@@ -54,47 +54,42 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
         })
     }
 
-    private fun prepareUiForButtonAnimation() = with(binding) {
-        val u2 = requireContext().resources.getDimensionPixelSize(R.dimen.u2).toFloat()
-        tvDoneButton.isClickable = false
-        tvTitle.translationY = u2
-        tvDescription.translationY = u2
-        vDivider.translationY = u2
-        tvDoneButton.translationY = u2
+    private fun prepareUiBeforeAnimation() = with(binding) {
+        btnDone.isClickable = false
         tvTitle.alpha = 0f
         tvDescription.alpha = 0f
         vDivider.alpha = 0f
-        tvDoneButton.alpha = 0f
+        btnDone.alpha = 0f
     }
 
-    private fun createButtonAnimation(): AnimatorSet = with(binding) {
+    private fun createBottomViewsAnimatorSet(): AnimatorSet = with(binding) {
         val u2 = requireContext().resources.getDimensionPixelSize(R.dimen.u2)
 
         val animations = listOf(
-            constructAnimator(300, DecelerateInterpolator(), startDelay = 0,
+            constructAnimator(300, DecelerateInterpolator(), delay = 0,
                 onUpdate = { tvTitle.translationY = u2 - it * u2 }
             ),
-            constructAnimator(300, DecelerateInterpolator(), startDelay = 50,
+            constructAnimator(300, DecelerateInterpolator(), delay = 50,
                 onUpdate = {
                     tvDescription.translationY = u2 - it * u2
                     vDivider.translationY = u2 - it * u2
                 }
             ),
-            constructAnimator(300, OvershootInterpolator(), startDelay = 100,
-                onUpdate = { tvDoneButton.translationY = u2 - it * u2 }
+            constructAnimator(300, OvershootInterpolator(), delay = 100,
+                onUpdate = { btnDone.translationY = u2 - it * u2 }
             ),
-            constructAnimator(300, LinearInterpolator(), startDelay = 0,
+            constructAnimator(300, LinearInterpolator(), delay = 0,
                 onUpdate = { tvTitle.alpha = it }
             ),
-            constructAnimator(300, LinearInterpolator(), startDelay = 50,
+            constructAnimator(300, LinearInterpolator(), delay = 50,
                 onUpdate = {
                     tvDescription.alpha = it
                     vDivider.alpha = it
                 }
             ),
-            constructAnimator(300, LinearInterpolator(), startDelay = 100,
-                onUpdate = { tvDoneButton.alpha = it },
-                onEnd = { tvDoneButton.isClickable = true }
+            constructAnimator(300, LinearInterpolator(), delay = 100,
+                onUpdate = { btnDone.alpha = it },
+                onEnd = { btnDone.isClickable = true }
             )
         )
 

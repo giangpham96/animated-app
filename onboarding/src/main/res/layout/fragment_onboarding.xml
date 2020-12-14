@@ -74,12 +74,12 @@
         android:layout_marginEnd="@dimen/u2"
         android:layout_marginBottom="@dimen/u3"
         android:background="@color/pepper_8"
-        app:layout_constraintBottom_toTopOf="@id/tvDoneButton"
+        app:layout_constraintBottom_toTopOf="@id/btnDone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/tvDoneButton"
+        android:id="@+id/btnDone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/u2"

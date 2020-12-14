@@ -37,7 +37,7 @@ class TabsFragment : BaseFragment<FragmentTabsBinding>() {
                     showFragment(TAG_DISCOVERY, 0) { DiscoveryFragment() }
                     return@f true
                 }
-                R.id.item_profile -> {
+                R.id.item_deliver -> {
                     showFragment(TAG_PROFILE, 1) { DeliveryFragment() }
                     return@f true
                 }
