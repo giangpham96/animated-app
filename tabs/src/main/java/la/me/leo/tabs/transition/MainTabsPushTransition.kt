@@ -21,7 +21,6 @@ internal class MainTabsPushTransition(private val x: Int, private val y: Int) :
         val animatorSet = AnimatorSet()
         animatorSet.playTogether(animator1, animator2)
         animatorSet.interpolator = PathInterpolatorCompat.create(0.25f, 0.1f, 0.25f, 1f)
-        animatorSet.duration = 300L
         fragment.lifecycle.cancelAnimatorOnDestroy(animatorSet)
         return animatorSet
     }
@@ -30,6 +29,7 @@ internal class MainTabsPushTransition(private val x: Int, private val y: Int) :
         val radius0 = 0f
         val radius1 = sqrt(fragmentRoot.height.toFloat().pow(2f) + x.toFloat().pow(2f))
         return ViewAnimationUtils.createCircularReveal(fragmentRoot, x, y, radius0, radius1)
+            .setDuration(300L)
     }
 
     private fun createTranslationAnimator(fragmentRoot: View): Animator {

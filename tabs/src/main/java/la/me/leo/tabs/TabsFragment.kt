@@ -48,16 +48,13 @@ class TabsFragment : BaseFragment<FragmentTabsBinding>() {
 
     private fun showFragment(tag: String, tabIndex: Int, fragmentFactory: () -> Fragment) {
         val bottomNavigationView = binding.bottomNavigationView
-        val pushAnimationX = ((tabIndex + 0.5f) / 2 * bottomNavigationView.width).toInt()
+        val pushAnimationX = ((tabIndex + 0.5f) / bottomNavigationView.menu.size() * bottomNavigationView.width).toInt()
         val pushAnimationY = (bottomNavigationView.bottom + bottomNavigationView.top) / 2
         childFragmentManager.navigateToTab(
             tag,
             R.id.fragmentRoot,
             fragmentFactory,
-            MainTabsPushTransition(
-                pushAnimationX,
-                pushAnimationY
-            ),
+            MainTabsPushTransition(pushAnimationX, pushAnimationY),
             MainTabsPopTransition()
         )
     }

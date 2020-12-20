@@ -2,6 +2,7 @@ package la.me.leo.core_animation.transition
 
 import android.animation.Animator
 import android.view.ViewGroup
+import androidx.annotation.CallSuper
 import androidx.core.animation.addListener
 import androidx.fragment.app.Fragment
 import androidx.transition.TransitionValues
@@ -17,8 +18,8 @@ abstract class FragmentEnterTransition : FragmentTransition() {
         return animator
     }
 
-    override fun integrateWithFragment(fragment: Fragment) {
-        this.fragment = fragment
+    @CallSuper override fun integrateWithFragment(fragment: Fragment) {
+        super.integrateWithFragment(fragment)
         fragment.enterTransition = this
     }
 }

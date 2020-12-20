@@ -2,6 +2,7 @@ package la.me.leo.core_animation.transition
 
 import android.animation.Animator
 import android.view.ViewGroup
+import androidx.annotation.CallSuper
 import androidx.core.animation.addListener
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -18,6 +19,7 @@ abstract class FragmentExitTransition : FragmentTransition() {
         animator.addListener(
             onStart = { fragment.view?.isVisible = true },
             onEnd = {
+                fragment.view?.isVisible = false
                 fragment.exitTransition = null
                 if (destroyFragmentAfterTransition) fragment.remove()
             }
@@ -25,8 +27,8 @@ abstract class FragmentExitTransition : FragmentTransition() {
         return animator
     }
 
-    override fun integrateWithFragment(fragment: Fragment) {
-        this.fragment = fragment
+    @CallSuper override fun integrateWithFragment(fragment: Fragment) {
+        super.integrateWithFragment(fragment)
         fragment.exitTransition = this
     }
 }

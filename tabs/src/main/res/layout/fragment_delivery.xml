@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/salt_100">
+    android:background="@color/salt_100"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Text_Heading3_Pepper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/u2"
+        android:layout_marginTop="@dimen/u2"
+        android:text="@string/delivers_to_me" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -14,4 +23,4 @@
         android:paddingBottom="@dimen/u1"
         tools:context=".tabs.discovery.DiscoveryFragment"
         tools:ignore="ContentDescription" />
-</FrameLayout>
+</LinearLayout>

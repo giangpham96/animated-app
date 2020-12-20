@@ -8,24 +8,25 @@ import androidx.fragment.app.Fragment
 import androidx.transition.Transition
 import androidx.transition.TransitionValues
 
-abstract class FragmentTransition() : Transition() {
+abstract class FragmentTransition : Transition() {
 
-    lateinit var fragment: Fragment
+    protected lateinit var fragment: Fragment
 
     override fun captureEndValues(transitionValues: TransitionValues) {}
     override fun captureStartValues(transitionValues: TransitionValues) {}
 
-    override fun isTransitionRequired(startValues: TransitionValues?,
-        endValues: TransitionValues?) = true
+    override fun isTransitionRequired(startValues: TransitionValues?, endValues: TransitionValues?) = true
 
-    @CallSuper
-    override fun createAnimator(sceneRoot: ViewGroup, startValues: TransitionValues?,
+    @CallSuper override fun createAnimator(sceneRoot: ViewGroup, startValues: TransitionValues?,
         endValues: TransitionValues?): Animator? {
         val fragmentRoot = fragment.view
         return fragmentRoot?.let { createFragmentAnimator(it) } ?: return null
     }
 
-    abstract fun integrateWithFragment(fragment: Fragment)
+    @CallSuper
+    open fun integrateWithFragment(fragment: Fragment) {
+        this.fragment = fragment
+    }
 
     abstract fun createFragmentAnimator(fragmentRoot: View): Animator
 

@@ -30,11 +30,7 @@ fun FragmentManager.navigateToTab(
     enterTransition.integrateWithFragment(enterFragment)
     commit {
         exitFragment?.let { hide(it) }
-        if (newlyCreated) {
-            add(rootId, enterFragment, tag)
-        } else {
-            show(enterFragment)
-        }
+        if (newlyCreated) add(rootId, enterFragment, tag) else show(enterFragment)
     }
 }
 
