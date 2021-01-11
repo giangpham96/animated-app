@@ -11,7 +11,9 @@ import la.me.leo.tabs.discovery.adapter.view_holder.MediumViewHolder
 import la.me.leo.tabs.discovery.adapter.view_holder.SquareTitleBottomViewHolder
 import la.me.leo.tabs.discovery.adapter.view_holder.VenueViewHolder
 
-internal class CarouselAdapter : RecyclerView.Adapter<BaseViewHolder<*, *>>() {
+internal class CarouselAdapter(
+    private val onVenueClickListener: () -> Unit
+) : RecyclerView.Adapter<BaseViewHolder<*, *>>() {
 
     var items: List<Item> = emptyList()
 
@@ -32,7 +34,7 @@ internal class CarouselAdapter : RecyclerView.Adapter<BaseViewHolder<*, *>>() {
                 parent
             )
             TYPE_VENUE -> VenueViewHolder(
-                parent
+                parent, onVenueClickListener
             )
             TYPE_SQUARE_TITLE_BOTTOM -> SquareTitleBottomViewHolder(
                 parent

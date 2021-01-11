@@ -8,4 +8,12 @@
     <string name="ob_intro_description">Enjoy the best restaurants or get what you need from nearby stores, delivered 😌</string>
     <string name="ob_intro_btn_get_started">Get started</string>
     <string name="venues_list_delivery">Delivery %s</string>
+    <string name="venue_menu_header_more_info">More info</string>
+    <string name="android_change">Change</string>
+    <string name="venue_footer_phone">Phone</string>
+    <string name="venue_autotranslation_prompt_translate">Translate</string>
+    <string name="venue_autotranslation_prompt_once">Once</string>
+    <string name="venue_autotranslation_prompt_show_original">Show original</string>
+    <string name="venue_productInfo">Product info</string>
+    <string name="venue_menu_add_to_order">Add to order</string>
 </resources>

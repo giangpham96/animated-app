@@ -7,6 +7,7 @@
     <color name="light_50p">#80ffffff</color>
     <color name="light_70p">#b3ffffff</color>
     <color name="light_100p">#ffffffff</color>
+    <color name="light_00p">#00ffffff</color>
 
     <color name="dark_00p">#00202125</color>
     <color name="dark_03p">#07202125</color>
@@ -18,15 +19,22 @@
     <color name="dark_87p">#de202125</color>
 
     <color name="pepper_8">#14202125</color>
+    <color name="pepper_40">#66202125</color>
     <color name="pepper_54">#8a202125</color>
     <color name="pepper_64">#a3202125</color>
     <color name="pepper_100">#ff202125</color>
 
+    <color name="salt_72">#b8ffffff</color>
     <color name="salt_100">#ffffffff</color>
 
     <color name="id_blue_55p">#8a009de0</color>
     <color name="id_blue_100p">#ff009de0</color>
 
+    <color name="wolt_8">#EBF7FD</color>
     <color name="wolt_100">#ff009de0</color>
     <color name="wolt_brand_blue">#ff00c2e8</color>
+    <color name="wolt_40_on_salt">#99d8f3</color>
+
+    <color name="strawberry_100">#fff93a25</color>
+    <color name="dark_ripple">#10000000</color>
 </resources>

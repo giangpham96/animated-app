@@ -26,4 +26,6 @@ dependencies {
     implementation(Dependencies.appCompat)
     implementation(Dependencies.fragmentKtx)
     implementation(Dependencies.transition)
+    implementation(Dependencies.recyclerView)
+    implementation(Dependencies.constraintLayout)
 }

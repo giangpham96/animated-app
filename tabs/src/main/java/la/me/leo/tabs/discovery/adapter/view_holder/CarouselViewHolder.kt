@@ -12,7 +12,8 @@ import la.me.leo.tabs.discovery.adapter.CarouselAdapter
 import la.me.leo.tabs.discovery.adapter.helper.CarouselSnapHelper
 
 internal class CarouselViewHolder(
-    parent: ViewGroup
+    parent: ViewGroup,
+    private val onVenueClickListener: () -> Unit
 ) : BaseViewHolder<Section<*>, ItemCarouselBinding>(
     ItemCarouselBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 ) {
@@ -35,7 +36,7 @@ internal class CarouselViewHolder(
         val layoutManager = LinearLayoutManager(itemView.context, RecyclerView.HORIZONTAL, false)
         rvItems.layoutManager = layoutManager
         rvItems.itemAnimator = null
-        adapter = CarouselAdapter()
+        adapter = CarouselAdapter(onVenueClickListener)
         rvItems.adapter = adapter
         CarouselSnapHelper(
             context

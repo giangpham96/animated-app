@@ -10,8 +10,9 @@ import la.me.leo.data.discovery.Section
 import la.me.leo.tabs.discovery.adapter.view_holder.CarouselViewHolder
 import la.me.leo.tabs.discovery.adapter.view_holder.HeroCarouselViewHolder
 
-open class FlexyAdapter(
-    private val lifecycle: Lifecycle
+internal class FlexyAdapter(
+    private val lifecycle: Lifecycle,
+    private val onVenueClickListener: () -> Unit
 ) : RecyclerView.Adapter<BaseViewHolder<*, *>>() {
 
     var items = listOf<Section<*>>()
@@ -29,7 +30,7 @@ open class FlexyAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*, *> {
         return when (viewType) {
             TYPE_CAROUSEL -> CarouselViewHolder(
-                parent
+                parent, onVenueClickListener
             )
             TYPE_HERO_CAROUSEL -> HeroCarouselViewHolder(
                 parent,

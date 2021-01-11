@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <Space
+        android:id="@+id/toolbarSpace"
+        android:layout_width="match_parent"
+        android:layout_height="-1dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Wrapping container is required to limit vToolbarBg z-index  -->
+    <FrameLayout
+        android:id="@+id/flToolbarBgContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/vToolbarBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/salt_100"
+            android:clickable="true"
+            android:elevation="@dimen/toolbar_elevation" />
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clImageContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        app:layout_constraintDimensionRatio="H,3:2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/collapsing_image_gradient"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <la.me.leo.core.base.view.ToolbarIconWidget
+        android:id="@+id/leftIconWidget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Text_Heading6_Pepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/u2"
+        android:layout_marginEnd="@dimen/u2"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbarSpace"
+        app:layout_constraintEnd_toStartOf="@+id/rightIconWidget2"
+        app:layout_constraintStart_toEndOf="@+id/leftIconWidget"
+        app:layout_constraintTop_toTopOf="@+id/toolbarSpace" />
+
+    <la.me.leo.core.base.view.ToolbarIconWidget
+        android:id="@+id/rightIconWidget2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/u8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <la.me.leo.core.base.view.ToolbarIconWidget
+        android:id="@+id/rightIconWidget1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</merge>

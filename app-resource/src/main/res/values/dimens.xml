@@ -4,6 +4,7 @@
     <dimen name="u0.5">4dp</dimen>
     <dimen name="u0.75">6dp</dimen>
     <dimen name="u1">8dp</dimen>
+    <dimen name="u1.25">10dp</dimen>
     <dimen name="u1.5">12dp</dimen>
     <dimen name="u1.75">14dp</dimen>
     <dimen name="u2">16dp</dimen>
@@ -13,12 +14,16 @@
     <dimen name="u4">32dp</dimen>
     <dimen name="u5">40dp</dimen>
     <dimen name="u6">48dp</dimen>
-    <dimen name="u13">78dp</dimen>
+    <dimen name="u7">56dp</dimen>
+    <dimen name="u8">64dp</dimen>
+    <dimen name="u10">80dp</dimen>
+    <dimen name="u13">104dp</dimen>
     <dimen name="u15">120dp</dimen>
     <dimen name="u17">136dp</dimen>
     <dimen name="u20">160dp</dimen>
     <dimen name="u30">240dp</dimen>
 
+    <dimen name="text00">8sp</dimen>
     <dimen name="text0">10sp</dimen>
     <dimen name="text1">12sp</dimen>
     <dimen name="text2">14sp</dimen>
@@ -33,4 +38,6 @@
     <dimen name="lse1">1sp</dimen>
     <dimen name="lse2">2sp</dimen>
     <dimen name="lse3">3sp</dimen>
+
+    <dimen name="toolbar_elevation">6dp</dimen>
 </resources>

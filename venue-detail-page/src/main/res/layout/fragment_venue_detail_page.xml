@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_100p">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/Text_Heading3_Pepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/u2"
+                android:layout_marginTop="@dimen/u3"
+                android:layout_marginEnd="@dimen/u1"
+                android:maxLines="2"
+                android:text="Naughty BRGR / Sello"
+                app:layout_constraintEnd_toStartOf="@+id/ivHeart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivHeart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="@dimen/u2"
+                android:background="@drawable/circle_pepper8"
+                android:padding="@dimen/u1"
+                android:src="@drawable/ic_heart"
+                app:layout_constraintBottom_toBottomOf="@+id/tvName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvName" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/Text_Body2_Pepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/u2"
+                android:layout_marginTop="@dimen/u2"
+                android:text="Suomen tuhmimmat hampurilaiset."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/Text_Body3_Pepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/u2"
+                android:layout_marginTop="@dimen/u4"
+                android:layout_marginEnd="@dimen/u1"
+                android:drawableStart="@drawable/ic_rating"
+                android:drawablePadding="@dimen/u1.5"
+                android:text="Excellent, 8.74"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/Text_Body3_Pepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/u2"
+                android:layout_marginTop="@dimen/u2.5"
+                android:layout_marginEnd="@dimen/u1"
+                android:drawableStart="@drawable/ic_clock_stroke"
+                android:drawablePadding="@dimen/u1.5"
+                android:text="11.00 - 23.00"
+                app:layout_constraintEnd_toStartOf="@+id/materialButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView" />
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/Text_Body3_Pepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/u2"
+                android:layout_marginTop="@dimen/u2.5"
+                android:layout_marginEnd="@dimen/u1"
+                android:drawableStart="@drawable/ic_bike"
+                android:drawablePadding="@dimen/u1.5"
+                android:text="Deliver in 30-45 mins\nWork (Antinkatu 1)"
+                app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/Text_Body3_Pepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/u2"
+                android:layout_marginTop="@dimen/u2.5"
+                android:layout_marginEnd="@dimen/u1"
+                android:drawableStart="@drawable/ic_group_add"
+                android:drawablePadding="@dimen/u1.5"
+                android:text="Group order"
+                app:layout_constraintEnd_toStartOf="@+id/materialButton3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView5" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/Text_Body2_Pepper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/u4"
+                android:layout_marginEnd="@dimen/u2"
+                android:text="€€€€"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/u2"
+                android:stateListAnimator="@null"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="@dimen/u1"
+                android:text="More info"
+                android:textAllCaps="false"
+                android:textColor="@color/wolt_100"
+                app:backgroundTint="@color/wolt_8"
+                app:cornerRadius="@dimen/u1"
+                app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/u2"
+                android:stateListAnimator="@null"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="@dimen/u1"
+                android:text="Change"
+                android:textAllCaps="false"
+                android:textColor="@color/wolt_100"
+                app:backgroundTint="@color/wolt_8"
+                app:cornerRadius="@dimen/u1"
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/u2"
+                android:stateListAnimator="@null"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="@dimen/u1"
+                android:text="Add"
+                android:textAllCaps="false"
+                android:textColor="@color/wolt_100"
+                app:backgroundTint="@color/wolt_8"
+                app:cornerRadius="@dimen/u1"
+                app:layout_constraintBottom_toBottomOf="@+id/textView6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/u2"
+                android:background="@color/pepper_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialButton3" />
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/Text_Heading6_Pepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/u2"
+                android:layout_marginTop="@dimen/u2"
+                android:layout_marginEnd="@dimen/u2"
+                android:text="Burgers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/Text_Body2_Pepper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/u2"
+                android:layout_marginTop="@dimen/u2"
+                android:layout_marginEnd="@dimen/u2"
+                android:text="A hamburger (also burger for short) is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun. The patty may be pan fried, grilled, smoked or flame broiled. Hamburgers are often served with cheese, lettuce, tomato, onion, pickles, bacon, or chiles; condiments such as ketchup, mustard, mayonnaise, relish, or a special sauce, often a variation of Thousand Island dressing; and are frequently placed on sesame seed buns. A hamburger topped with cheese is called a cheeseburger. The term burger can also be applied to the meat patty on its own, especially in the United Kingdom, where the term patty is rarely used, or the term can even refer simply to ground beef. Since the term hamburger usually implies beef, for clarity burger may be prefixed with the type of meat or meat substitute used, as in beef burger, turkey burger, bison burger, or veggie burger. Hamburgers are sold at fast-food restaurants, diners, and specialty and high-end restaurants. There are many international and regional variations of the hamburger. Hamburgers are usually a feature of fast food restaurants. The hamburgers served in major fast food establishments are usually mass-produced in factories and frozen for delivery to the site. These hamburgers are thin and of uniform thickness, differing from the traditional American hamburger prepared in homes and conventional restaurants, which is thicker and prepared by hand from ground beef. Most American hamburgers are round, but some fast-food chains, such as Wendy's, sell square-cut hamburgers. Hamburgers in fast food restaurants are usually grilled on a flat-top, but some firms, such as Burger King, use a gas flame grilling process. At conventional American restaurants, hamburgers may be ordered rare, but normally are served medium-well or well-done for food safety reasons. Fast food restaurants do not usually offer this option."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <la.me.leo.venue_detail_page.widget.VenueCollapsingImageWidget
+        android:id="@+id/venueCollapsingImageWidget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

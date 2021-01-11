@@ -16,7 +16,8 @@ import la.me.leo.data.discovery.Item.Venue
 import la.me.leo.tabs.databinding.ItemVenueBinding
 
 internal class VenueViewHolder(
-    parent: ViewGroup
+    parent: ViewGroup,
+    onVenueClickListener: () -> Unit
 ) : BaseViewHolder<Venue, ItemVenueBinding>(
     ItemVenueBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 ) {
@@ -24,6 +25,9 @@ internal class VenueViewHolder(
     init {
         binding.root.outlineProvider = RoundRectOutlineProvider(radius = context.dp(8).toFloat())
         binding.root.clipToOutline = true
+        binding.root.setOnClickListener {
+            onVenueClickListener()
+        }
     }
 
     override fun render(item: Venue) = with(binding) {

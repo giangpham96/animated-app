@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
+import la.me.leo.core.base.navigation.ToVenue
 import la.me.leo.core.base.ui.BaseFragment
 import la.me.leo.data.discovery.DiscoveryRepository
 import la.me.leo.tabs.databinding.FragmentDiscoveryBinding
@@ -23,7 +24,9 @@ internal class DiscoveryFragment : BaseFragment<FragmentDiscoveryBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvDiscovery.apply {
-            adapter = FlexyAdapter(lifecycle)
+            adapter = FlexyAdapter(lifecycle) {
+                navigator.navigateTo(ToVenue)
+            }
                 .also { it.items = DiscoveryRepository(requireContext()).provideDiscoveryData().sections }
             layoutManager = LinearLayoutManager(context, VERTICAL, false)
         }
