@@ -38,7 +38,7 @@ internal class VenueCollapsingImageWidget(context: Context, attrs: AttributeSet)
 
     var bigTitle: View? = null
 
-    private var currentPhase: Phase = Phase.ONE
+    private var currentPhase: Phase = Phase.EXPANDED
 
     init {
         binding.toolbarSpace.layoutParams.height = context.toolbarHeight
@@ -72,29 +72,38 @@ internal class VenueCollapsingImageWidget(context: Context, attrs: AttributeSet)
 
     override fun onScrollPositionChanged(scrollY: Float) {
         val collapsingDistance = calcCollapsingDistance()
-        currentPhase = when {
-            scrollY < collapsingDistance / 2 -> Phase.ONE
-            scrollY < collapsingDistance -> Phase.TWO
-            scrollY - collapsingDistance < calcPhase3ScrollRange() -> Phase.THREE
-            else -> Phase.COLLAPSED
-        }
+        determineCurrentPhase(scrollY, collapsingDistance)
         renderImage(scrollY, collapsingDistance)
         renderIconBackground(scrollY, collapsingDistance)
-        renderIconSize(scrollY, collapsingDistance)
+        renderMoreInfoIconSize(scrollY, collapsingDistance)
+        renderSearchIconPosition(scrollY, collapsingDistance)
         renderTitles(scrollY, collapsingDistance)
         renderToolbarBackground(scrollY, collapsingDistance)
     }
 
-    override fun calcCollapsingDistance() = height.toFloat() - binding.toolbarSpace.bottom
-
-    private fun calcPhase3ScrollRange(): Int {
-        return context.getDimen(R.dimen.u3) + (bigTitle?.height ?: 0) * 7 / 10
+    private fun determineCurrentPhase(scrollY: Float, collapsingDistance: Float) {
+        val phase3ScrollRange = context.getDimen(R.dimen.u3)
+        currentPhase = when {
+            scrollY == 0f -> Phase.EXPANDED
+            scrollY < collapsingDistance / 2 -> Phase.ONE
+            scrollY < collapsingDistance -> Phase.TWO
+            scrollY < collapsingDistance + phase3ScrollRange -> Phase.THREE
+            scrollY < collapsingDistance + phase3ScrollRange + (bigTitle?.height ?: 0) -> Phase.FOUR
+            else -> Phase.COLLAPSED
+        }
     }
 
+    private fun calcCollapsingDistance() = height.toFloat() - binding.toolbarSpace.bottom
+
+    private fun calcPhase3and4ScrollRange(): Int {
+        return context.getDimen(R.dimen.u3) + (bigTitle?.height ?: 0)
+    }
+
+    // Handle motion (1) and (2)
     private fun renderImage(scrollY: Float, collapsingDistance: Float) {
-        val progress = when {
-            scrollY == 0f -> 0f
-            isInPhase1Or2() -> scrollY / collapsingDistance
+        val progress = when(currentPhase) {
+            Phase.EXPANDED -> 0f
+            Phase.ONE, Phase.TWO -> scrollY / collapsingDistance
             else -> 1f
         }
         val ivImageScale0 = 1.1f
@@ -103,15 +112,16 @@ internal class VenueCollapsingImageWidget(context: Context, attrs: AttributeSet)
         binding.ivImage.scaleX = ivImageScale
         binding.ivImage.scaleY = ivImageScale
         binding.ivImage.alpha = 1f - progress
-        binding.ivImage.translationY = -binding.clImageContainer.translationY / 2
-        binding.clImageContainer.translationY = binding.vToolbarBg.translationY
         binding.vToolbarBg.translationY = -collapsingDistance * progress
+        binding.clImageContainer.translationY = binding.vToolbarBg.translationY
+        binding.ivImage.translationY = -binding.clImageContainer.translationY / 2
     }
 
+    // Handle motion (3)
     private fun renderIconBackground(scrollY: Float, collapsingDistance: Float) {
-        val bgProgress = when {
-            scrollY == 0f -> 0f
-            isInPhase1Or2() -> scrollY / collapsingDistance
+        val bgProgress = when(currentPhase) {
+            Phase.EXPANDED -> 0f
+            Phase.ONE, Phase.TWO -> scrollY / collapsingDistance
             else -> 1f
         }
         val iconBgColor =
@@ -121,28 +131,48 @@ internal class VenueCollapsingImageWidget(context: Context, attrs: AttributeSet)
         binding.rightIconWidget2.backgroundCircleColor = iconBgColor
     }
 
-    private fun renderIconSize(scrollY: Float, collapsingDistance: Float) {
-        val rightIconProgress = when {
-            isInPhase1() -> 1f
-            isInPhase2() -> 1 - (scrollY - collapsingDistance / 2) / (collapsingDistance / 2)
-            else -> 1f
+    // Handle motion (4) and (5)
+    private fun renderMoreInfoIconSize(scrollY: Float, collapsingDistance: Float) {
+        val progress = when(currentPhase) {
+            Phase.EXPANDED, Phase.ONE -> 1f
+            Phase.TWO -> 1 - (scrollY - collapsingDistance / 2) / (collapsingDistance / 2)
+            else -> 0f
         }
-        binding.rightIconWidget1.alpha = rightIconProgress
-        binding.rightIconWidget1.size = (binding.rightIconWidget2.size * rightIconProgress).toInt()
+        binding.rightIconWidget1.alpha = progress
+        binding.rightIconWidget1.size = (binding.rightIconWidget2.size * progress).toInt()
+    }
+
+    // Handle motion (6)
+    private fun renderSearchIconPosition(scrollY: Float, collapsingDistance: Float) {
+        val progress = when(currentPhase) {
+            Phase.EXPANDED, Phase.ONE -> 1f
+            Phase.TWO -> 1 - (scrollY - collapsingDistance / 2) / (collapsingDistance / 2)
+            else -> 0f
+        }
         val marginEnd0 = context.getDimen(R.dimen.u8)
         val marginEnd1 = context.getDimen(R.dimen.u2)
-        val marginEnd = (marginEnd0 - marginEnd1) * rightIconProgress + marginEnd1
+        val marginEnd = (marginEnd0 - marginEnd1) * progress + marginEnd1
         binding.rightIconWidget2.updateLayoutParams<LayoutParams> {
             updateMarginsRelative(end = marginEnd.toInt())
         }
     }
 
-    private fun renderTitles(scrollY: Float, collapsingDistance: Float) {
-        val progress = when {
-            scrollY == 0f -> 0f
-            isInPhase1Or2() -> 0f
-            isInPhase3() -> (scrollY - collapsingDistance) / calcPhase3ScrollRange()
+    // Handle motion (7)
+    private fun renderToolbarBackground(scrollY: Float, collapsingDistance: Float) {
+        val alpha = when(currentPhase) {
+            Phase.EXPANDED, Phase.ONE, Phase.TWO -> 0f
+            Phase.THREE -> (scrollY - collapsingDistance) / context.getDimen(R.dimen.u3)
             else -> 1f
+        }
+        binding.flToolbarBgContainer.alpha = alpha
+    }
+
+    // Handle motion (8), (9) and (10)
+    private fun renderTitles(scrollY: Float, collapsingDistance: Float) {
+        val progress = when(currentPhase) {
+            Phase.EXPANDED, Phase.ONE, Phase.TWO -> 0f
+            Phase.THREE, Phase.FOUR -> (scrollY - collapsingDistance) / calcPhase3and4ScrollRange()
+            Phase.COLLAPSED -> 1f
         }
         val translationY0 = context.getDimen(R.dimen.u1)
         val translationY = (1f - progress) * translationY0
@@ -151,25 +181,7 @@ internal class VenueCollapsingImageWidget(context: Context, attrs: AttributeSet)
         bigTitle?.alpha = 1f - progress
     }
 
-    private fun renderToolbarBackground(scrollY: Float, collapsingDistance: Float) {
-        val progress = when {
-            scrollY == 0f -> 0f
-            isInPhase1Or2() -> 0f
-            isInPhase3() -> (scrollY - collapsingDistance) / context.getDimen(R.dimen.u3)
-            else -> 1f
-        }
-        binding.flToolbarBgContainer.alpha = progress
-    }
-
-    private fun isInPhase1Or2() = currentPhase == Phase.ONE || currentPhase == Phase.TWO
-
-    private fun isInPhase1() = currentPhase == Phase.ONE
-
-    private fun isInPhase2() = currentPhase == Phase.TWO
-
-    private fun isInPhase3() = currentPhase == Phase.THREE
-
-    enum class Phase { ONE, TWO, THREE, COLLAPSED }
+    enum class Phase { EXPANDED, ONE, TWO, THREE, FOUR, COLLAPSED }
 
 }
 

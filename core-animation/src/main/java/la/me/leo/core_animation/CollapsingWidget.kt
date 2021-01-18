@@ -23,7 +23,5 @@ abstract class CollapsingWidget(context: Context, attrs: AttributeSet): Constrai
         }
     }
 
-    protected abstract fun calcCollapsingDistance(): Float
-
     protected abstract fun onScrollPositionChanged(scrollY: Float)
 }
